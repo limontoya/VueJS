@@ -1,7 +1,9 @@
 var app = new Vue({
 	el: '#app',
 	data:{
-		product: 'Socks',
-		myExpression: 'It could be anything I want!'
+		myproduct: 'Socks',
+		myexpression: 'It could be anything I want!',
+		myimage: 'assets/vmSocks-green-onWhite.jpg',
+		myurl: 'https://es.wikipedia.org/wiki/Bulma'
 	}
 });

@@ -8,7 +8,7 @@
 <body>
 
 	<div class="nav-bar"></div>
-	<!-- app: referencia a 'el' elemento vue -->
+	
 	<div id="app">
 		<div class="product">
 			
@@ -18,8 +18,15 @@
 
 			<div class="product-info">
 				<h1>{{ myproduct }}</h1>	
-				<h2>{{ myexpression }}</h2>				
-				<h3><a :href="myurl">ir a myurl</a></h3>
+				<!-- v-show: when false style display element to none -->
+				<p v-show="isavailable">In stock</p>
+
+				<p v-if="inventory > 10">In stock</p>
+				<p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+				<p v-else>Out of stock</p>
+				
+				<span v-if="onSale">On sale!</span>
+				<span v-else>Not on sale...</span>
 			</div>
 			
 		</div>		

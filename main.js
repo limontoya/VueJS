@@ -12,7 +12,7 @@ var app = new Vue({
 		cart: 0,
 		stylePtag: {
 			color: 'grey',
-			fontSize: '13px'
+			fontSize: '15px'
 		},
 		stylePtagDeco: {
 			color: 'red',

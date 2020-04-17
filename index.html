@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, inital-scale">
+	<meta name="viewport" content="width=device-width">
 	<title>Vue product App</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -17,7 +17,9 @@
 			</div>
 
 			<div class="product-info">
-				<h1>{{ myproduct }}</h1>
+				<h1>{{ mytitle }}</h1>
+
+				<h4>{{ onSale }}</h4>
 
 				<p :style="stylePtag" v-if="inStock">In stock</p>
 				<p :style="stylePtagDeco" v-else>Out of stock</p>
@@ -26,11 +28,11 @@
 					<li v-for="detail in details">{{ detail }}</li>
 				</ul>
 
-				<div v-for="variant in variants" 
+				<div v-for="(variant, index) in variants" 
 					  :key="variant.variantId"
 					 class="color-box"
 					:style="{ backgroundColor: variant.variantColor }"
-				@mouseover="updateProduct(variant.variantImage)">
+				@mouseover="updateProduct(index)">
 				</div>
 
 				<button @click="addToCart"
